@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PractRab9.MainPage"
+             Appearing="ContentPage_Apperating">
+
+    <StackLayout Orientation="Vertical" Margin="5,10,5,10">
+        <Image Source="people.jpg" Aspect="AspectFit" WidthRequest="300"></Image>
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    <EntryCell x:Name="fam" Label="Фамилия" Placeholder="Введите фамилию"></EntryCell>
+                    <EntryCell x:Name="name" Label="Имя" Placeholder="Введите имя"></EntryCell>
+                    <EntryCell x:Name="lastName" Label="Отчество" Placeholder="Введите отчество"></EntryCell>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="Дата рождения:" VerticalOptions="Center" Margin="15,0,10,0"></Label>
+                            <DatePicker x:Name="dataBirth" Margin="15,-15,15,0" DateSelected="dataBirth_DateSelected"></DatePicker>
+                        </StackLayout>
+                    </ViewCell>
+                    <TextCell x:Name="age" Text="Возраст-"></TextCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Пол" VerticalOptions="Center" Margin="15,0,10,0" ></Label>
+                            <Picker Title="" Margin="15,-15,10,0">
+                                <Picker.Items>
+                                    <x:String>Мужской</x:String>
+                                    <x:String>Женский</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Являетесь ли старостой?" VerticalOptions="Center" Margin="15,0,10,0" ></Label>
+                            <Picker Title="" Margin="15,-15,10,0">
+                                <Picker.Items>
+                                    <x:String>Да</x:String>
+                                    <x:String>Нет</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Требуется общежитие?" VerticalOptions="Center" Margin="15,0,10,0" ></Label>
+                            <Picker Title="" Margin="15,-15,10,0">
+                                <Picker.Items>
+                                    <x:String>Да</x:String>
+                                    <x:String>Нет</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection x:Name="phone">
+                    <EntryCell Placeholder="Введите номер" Label="Телефон" Keyboard="Numeric"></EntryCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <Button Text="Добавить телефон" Clicked="addPhone_Clicked" ></Button>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <Button Text="Сохранить" Clicked="save_Clicked" ></Button>
+                    </ViewCell>
+                </TableSection>
+                
+                <TableSection>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+    </StackLayout>
+
+</ContentPage>
